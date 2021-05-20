@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   build:
-    working_directory: /go/src/github.com/Mongey/terraform-provider-kafka
+    working_directory: /go/src/github.com/Worldremit/terraform-provider-kafka
     docker:
       - image: circleci/golang:1.13
         environment:
@@ -10,11 +10,11 @@ jobs:
       - checkout
       - run: go build .
       - store_artifacts:
-          path: /go/src/github.com/Mongey/terraform-provider-kafka/terraform-provider-kafka
+          path: /go/src/github.com/Worldremit/terraform-provider-kafka/terraform-provider-kafka
           destination: terraform-provider-kafka
 
   test:
-    working_directory: /go/src/github.com/Mongey/terraform-provider-kafka
+    working_directory: /go/src/github.com/Worldremit/terraform-provider-kafka
     docker:
       - image: circleci/golang:1.13
         environment:
