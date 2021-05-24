@@ -22,7 +22,7 @@ the below into your `main.tf` and execute `terraform init`
 terraform {
   required_providers {
     kafka = {
-      source = "Mongey/kafka"
+      source = "Worldremit/kafka"
     }
   }
 }
@@ -37,16 +37,16 @@ provider "kafka" {
 ```
 
 Otherwise, install by downloading and extracting the [latest
-release](https://github.com/Mongey/terraform-provider-kafka/releases/latest) to
+release](https://github.com/Worldremit/terraform-provider-kafka/releases/latest) to
 your [terraform plugin directory][third-party-plugins] (typically `~/.terraform.d/plugins/`)
 
 ### Developing
 
 0. [Install go][install-go]
-0. Clone repository to: `$GOPATH/src/github.com/Mongey/terraform-provider-kafka`
+0. Clone repository to: `$GOPATH/src/github.com/Worldremit/terraform-provider-kafka`
     ``` bash
-    mkdir -p $GOPATH/src/github.com/Mongey/terraform-provider-kafka; cd $GOPATH/src/github.com/Mongey/
-    git clone https://github.com/Mongey/terraform-provider-kafka.git
+    mkdir -p $GOPATH/src/github.com/Worldremit/terraform-provider-kafka; cd $GOPATH/src/github.com/Mongey/
+    git clone https://github.com/Worldremit/terraform-provider-kafka.git
     ```
 0. Build the provider `make build`
 0. Run the tests `make test`
@@ -103,17 +103,19 @@ resource "kafka_topic" "logs" {
     "segment.ms"     = "20000"
     "cleanup.policy" = "compact"
   }
+  termination_protection = false
 }
 ```
 
 #### Properties
 
-| Property             | Description                                    |
-| -------------------- | ---------------------------------------------- |
-| `name`               | The name of the topic                          |
-| `partitions`         | The number of partitions the topic should have |
-| `replication_factor` | The number of replicas the topic should have   |
-| `config`             | A map of string [K/V attributes][topic-config] |
+| Property                 | Description                                    |
+| ------------------------ | ---------------------------------------------- |
+| `name`                   | The name of the topic                          |
+| `partitions`             | The number of partitions the topic should have |
+| `replication_factor`     | The number of replicas the topic should have   |
+| `config`                 | A map of string [K/V attributes][topic-config] |
+| `termination_protection` | Client side removal protection                 |
 
 
 #### Importing Existing Topics

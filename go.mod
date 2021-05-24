@@ -1,4 +1,4 @@
-module github.com/Mongey/terraform-provider-kafka
+module github.com/Worldremit/terraform-provider-kafka
 
 go 1.16
 

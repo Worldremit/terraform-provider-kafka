@@ -8,8 +8,8 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/Mongey/terraform-provider-kafka/kafka"
 	"github.com/Shopify/sarama"
+	"github.com/Worldremit/terraform-provider-kafka/kafka"
 )
 
 func main() {
